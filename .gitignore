@@ -1,0 +1,9 @@
+data/
+outputs/
+*.ckpt
+*.pt
+*.log
+**/__pycache__/
+*.ipynb_checkpoints/
+.env
+.kaggle/
