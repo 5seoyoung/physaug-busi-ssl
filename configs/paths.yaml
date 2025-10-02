@@ -1,0 +1,4 @@
+data_root: data
+busi_raw: data/raw/BUSI
+processed_root: data/processed
+outputs_root: outputs

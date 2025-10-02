@@ -1,0 +1,22 @@
+speckle:
+  sc_min: 0.567
+  sc_max: 1.052
+  corr_px_min: 1.0
+  corr_px_max: 2.0
+attenuation:
+  k_min: 0.001
+  k_max: 0.0001
+  tgc_jitter: 0.1
+psf:
+  sigma_ax_min: 0.7
+  sigma_ax_max: 0.7
+  sigma_lat_min: 1.2
+  sigma_lat_max: 1.2
+shadow:
+  beta_min: 0.5
+  beta_max: 1.5
+  gamma_min: 0.1
+  gamma_max: 0.4
+logcomp:
+  gain_min: 0.8
+  gain_max: 1.2
