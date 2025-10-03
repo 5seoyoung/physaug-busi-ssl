@@ -4,8 +4,8 @@ speckle:
   corr_px_min: 1.0
   corr_px_max: 2.0
 attenuation:
-  k_min: 0.001
-  k_max: 0.0001
+  k_min: 0.0001
+  k_max: 0.001
   tgc_jitter: 0.1
 psf:
   sigma_ax_min: 0.7

@@ -1,0 +1,14 @@
+method: byol
+encoder: mobilenetv3_small_100
+img_size: 128
+epochs: 2
+batch_size: 32
+optimizer:
+  name: adamw
+  lr: 1.0e-3
+  weight_decay: 1.0e-4
+scheduler: { name: cosine, warmup_epochs: 0 }
+byol: { proj_dim: 256, proj_hidden: 2048, ema_start: 0.99, ema_end: 0.996 }
+augment: { use_physaug: true }
+seeds: [0]
+out_dir: outputs/runs/ssl/byol_physaug

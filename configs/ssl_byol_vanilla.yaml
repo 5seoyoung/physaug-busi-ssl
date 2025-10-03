@@ -6,6 +6,6 @@ batch_size: 128
 optimizer: { name: adamw, lr: 1.0e-3, weight_decay: 1.0e-4 }
 scheduler: { name: cosine, warmup_epochs: 10 }
 byol: { proj_dim: 256, proj_hidden: 4096, ema_start: 0.99, ema_end: 0.996 }
-augment: { use_physaug: true }
+augment: { use_physaug: false }   # ★ PhysAug 끔
 seeds: [0,1,2]
-out_dir: outputs/runs/ssl/byol_physaug
+out_dir: outputs/runs/ssl/byol_vanilla
