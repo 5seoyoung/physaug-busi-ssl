@@ -1,4 +1,4 @@
 data_root: data
-busi_raw: data/raw/BUSI
+busi_raw: data/raw/BUSI/Dataset_BUSI_with_GT
 processed_root: data/processed
 outputs_root: outputs
