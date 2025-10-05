@@ -486,7 +486,7 @@ def main(args):
                 p.requires_grad = False
         print("[INFO] backbone frozen (linear probe)")
 
-    # Load pretrained
+    # Load pretraineds
     if args.pretrained and os.path.isfile(args.pretrained):
         print(f"[INFO] load pretrained (BYOL) from: {args.pretrained}")
         loaded, missing, unexpected = flexible_load_state_dict(model, args.pretrained)
