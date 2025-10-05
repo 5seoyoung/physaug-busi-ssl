@@ -328,6 +328,9 @@ def main(args):
                           pin_memory=pin_mem)
 
     print(f"[Run summary] train={len(train_ds)} | val={len(val_ds)} | batch={args.batch_size} | img={args.img_size}")
+    print(f"[Sampler] train={type(train_dl.sampler).__name__} | val={type(val_dl.sampler).__name__} | val_shuffle={getattr(val_dl, 'shuffle', False)}")
+    if getattr(args, 'debug_samplers_only', False):
+        return
     print(f"[Run summary] classes={classes} | device={device.type}")
 
     # model
@@ -414,6 +417,7 @@ if __name__ == "__main__":
                     help="Use class-weighted cross-entropy.")
     ap.add_argument("--use_weighted_sampler", action="store_true",
                     help="Use WeightedRandomSampler for training loader (replaces shuffle).")
+    ap.add_argument("--debug_samplers_only", action="store_true", help="Print sampler types and exit")
 
     args = ap.parse_args()
     main(args)
