@@ -1,11 +1,23 @@
 method: byol
-encoder: mobilenetv3_small_100
+encoder: mobilenetv3_small_100        # timm 이름
 img_size: 128
 epochs: 200
 batch_size: 128
-optimizer: { name: adamw, lr: 1.0e-3, weight_decay: 1.0e-4 }
-scheduler: { name: cosine, warmup_epochs: 10 }
-byol: { proj_dim: 256, proj_hidden: 4096, ema_start: 0.99, ema_end: 0.996 }
-augment: { use_physaug: true }
+optimizer:
+  name: adamw
+  lr: 1.0e-3
+  weight_decay: 1.0e-4
+scheduler:
+  name: cosine
+  warmup_epochs: 10
+byol:
+  proj_dim: 256
+  proj_hidden: 4096
+  ema_start: 0.99         # momentum τ 시작
+  ema_end: 0.996          # (train_ssl.py에서 cosine으로 보간)
+augment:
+  use_physaug: true       # true=PhysAug, false=vanilla
+  color_jitter: false     # 초음파라서 기본 끔(원하면 살짝 켤 수 있음)
 seeds: [0,1,2]
+save_ckpt_every: 50
 out_dir: outputs/runs/ssl/byol_physaug

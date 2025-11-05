@@ -1,0 +1,11 @@
+encoder: mobilenetv3_small_100
+decoder: unet_light
+img_size: 224
+epochs: 80
+batch_size: 16
+optimizer: {name: adamw, lr: 1.0e-3, weight_decay: 1.0e-4}
+loss: {name: dice_bce, dice_weight: 0.7}
+splits: {folds: 5, patient_wise: true}
+metrics: [dice, iou, boundary_f1]
+out_dir: outputs/runs/seg
+label_ratios: [0.10, 0.30, 1.00]
